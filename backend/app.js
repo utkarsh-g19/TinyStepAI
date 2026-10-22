@@ -2,6 +2,7 @@ const express = require("express");
 
 const plannerRoutes = require("./routes/planner.routes");
 const toolDemoRoutes = require("./routes/tool-demo.routes");
+const weatherRoutes = require("./routes/weather.routes");
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.get("/", (req, res) => {
 // Mount the route modules.
 app.use("/api/plan", plannerRoutes);
 app.use("/api/tool-demo", toolDemoRoutes);
+app.use("/api/weather", weatherRoutes);
 
 module.exports = app;

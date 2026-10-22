@@ -1,9 +1,13 @@
 const { daysUntil, dayOfWeek } = require("./date.tools");
+const { getCurrentWeather } = require("../services/weather.service");
 
 //AI Tools registry
 const tools = {
   daysUntil: ({ dateString }) => daysUntil(dateString),
   dayOfWeek: ({ dateString }) => dayOfWeek(dateString),
+  getCurrentWeather: async () => {
+    return await getCurrentWeather();
+  },
 };
 
 //AI Tool dispatcher

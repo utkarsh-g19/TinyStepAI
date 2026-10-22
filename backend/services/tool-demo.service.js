@@ -37,6 +37,19 @@ async function runToolDemo(question) {
         },
       },
     },
+    {
+      type: "function",
+      function: {
+        name: "getCurrentWeather",
+        description:
+          "Get current weather conditions for Bengaluru, including temperature, feels-like temperature, humidity, precipitation, and wind speed.",
+        parameters: {
+          type: "object",
+          properties: {},
+          required: [],
+        },
+      },
+    },
   ];
 
   const messages = [
@@ -45,7 +58,9 @@ async function runToolDemo(question) {
       content:
         "You are a helpful assistant. If asked how many days remain " +
         "until a date, use daysUntil. If asked which weekday a date " +
-        "falls on, use dayOfWeek. Use the tool result and never guess.",
+        "falls on, use dayOfWeek. Use the tool result and never guess." +
+        "If asked about current weather in Bengaluru, use getCurrentWeather." +
+        "Use the tool result and never invent weather measurements.",
     },
     {
       role: "user",
